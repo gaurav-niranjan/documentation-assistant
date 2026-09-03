@@ -1,62 +1,124 @@
 # Documentation Assistant
 
-A small retrieval-augmented generation (RAG) project for asking questions over documentation. The pipeline uses Pinecone for vector storage and retrieval, and Gemini via the OpenAI-compatible API for answer generation. Both services can be used with free-tier accounts.
+A simple multi-product retrieval-augmented generation (RAG) assistant for software documentation. The app uses Pinecone for retrieval and Gemini for answer generation through the OpenAI-compatible API.
 
-## What the project does
+## Overview
 
-The repository is organized around a simple end-to-end workflow:
+This repository builds a lightweight support assistant for multiple fictional GROSS products:
+
+- Lavafox (web browser)
+- Birdmail (email client)
+- OpenMRS (medical record system)
+- Paintscape (SVG drawing tool)
+- Blogpress (CMS)
+
+The end-to-end pipeline is:
 
 1. Convert a source PDF into Markdown.
-2. Normalize the Markdown structure so section headings can be chunked cleanly.
-3. Split the documentation into section-sized chunks.
-4. Store the chunks in a Pinecone index.
-5. Retrieve the most relevant chunks for a user question.
-6. Send the retrieved context to Gemini to generate the final answer.
+2. Normalize heading levels for consistent chunk boundaries.
+3. Split each manual into chunks by H1 sections.
+4. Upsert chunks to Pinecone under a shared namespace.
+5. Retrieve top matching chunks for each user query.
+6. Pass retrieved context to Gemini and return the answer.
 
 ## Source Layout
 
-- [src/chat_app/pdf_parser/docling_parser.py](src/chat_app/pdf_parser/docling_parser.py) converts the source PDF into Markdown and writes the result to `data_sources/lavafox.md`.
-- [src/chat_app/pdf_parser/h2_to_h1.py](src/chat_app/pdf_parser/h2_to_h1.py) promotes numbered `##` headings to `#` headings so the document is easier to split into chunks.
-- [src/chat_app/pinecone_utils/create_index.py](src/chat_app/pinecone_utils/create_index.py) creates the Pinecone index used by the project.
-- [src/chat_app/pinecone_utils/save_vectors.py](src/chat_app/pinecone_utils/save_vectors.py) reads the Markdown documentation, splits it into chunks, and uploads the records to Pinecone.
-- [src/chat_app/doc_assistant/RAG_chatbot.py](src/chat_app/doc_assistant/RAG_chatbot.py) runs the RAG chat loop: it searches Pinecone, builds context from the retrieved chunks, and asks Gemini to answer.
-- [src/chat_app/doc_assistant/chatbot.py](src/chat_app/doc_assistant/chatbot.py) is a simpler baseline chatbot that answers directly from the full documentation text without retrieval.
+- [src/chat_app/pdf_parser/docling_parser.py](src/chat_app/pdf_parser/docling_parser.py): Converts supported PDFs to Markdown for Paintscape, OpenMRS, Birdmail, and Blogpress.
+- [src/chat_app/pdf_parser/h2_to_h1.py](src/chat_app/pdf_parser/h2_to_h1.py): Promotes numbered H2 headings to H1 headings for cleaner chunking.
+- [src/chat_app/pinecone_utils/create_index.py](src/chat_app/pinecone_utils/create_index.py): Creates Pinecone index gross-app using hosted embedding model llama-text-embed-v2.
+- [src/chat_app/pinecone_utils/save_vectors.py](src/chat_app/pinecone_utils/save_vectors.py): Chunks all Markdown manuals and upserts them into namespace all-gross.
+- [src/chat_app/doc_assistant/RAG_chatbot.py](src/chat_app/doc_assistant/RAG_chatbot.py): Single-product interactive RAG chat (Lavafox namespace).
+- [src/chat_app/evals/chatbot.py](src/chat_app/evals/chatbot.py): Multi-product interactive RAG chat for the all-gross namespace.
+- [src/chat_app/doc_assistant/chatbot.py](src/chat_app/doc_assistant/chatbot.py): Baseline non-RAG chatbot that injects one full manual directly in the prompt.
 
-## Data Flow
+## Data Sources
 
-The project currently uses the `lavafox` documentation under `data_sources/` as example content. The main RAG path is:
+Documentation files live in data_sources:
 
-`data_sources/firefox.pdf` -> Markdown -> `data_sources/lavafox.md` -> chunked records -> Pinecone namespace `lavafox` -> Gemini answer generation.
+- [data_sources/lavafox.md](data_sources/lavafox.md)
+- [data_sources/birdmail.md](data_sources/birdmail.md)
+- [data_sources/openMRS.md](data_sources/openMRS.md)
+- [data_sources/paintscape.md](data_sources/paintscape.md)
+- [data_sources/blogpress.md](data_sources/blogpress.md)
 
-The Pinecone index name used in the code is `gross-app`.
+The multi-product pipeline writes vectors into:
 
-## Requirements
+- Index: gross-app
+- Namespace: all-gross
 
-The project depends on Python 3.10+ and these packages:
+## Setup
 
-- `docling`
-- `google-genai`
-- `openai`
-- `pinecone`
-- `python-dotenv`
+Requirements:
+
+- Python 3.10+
+- Pinecone account and API key
+- Gemini API key
+
+Install dependencies:
+
+```bash
+uv sync
+```
 
 ## Environment Variables
 
-Set these values before running the scripts:
+Create a .env file in the repository root:
 
-- `GEMINI_API_KEY`
-- `PINECONE_API_KEY`
+```env
+GEMINI_API_KEY=your_gemini_key
+PINECONE_API_KEY=your_pinecone_key
+```
 
-## Typical Workflow
+## Run Pipeline
 
-1. Convert the source document to Markdown.
-2. Optionally run the heading-normalization step.
-3. Create the Pinecone index if it does not exist.
-4. Upload the documentation chunks into Pinecone.
-5. Run the RAG chatbot and ask a question.
+1. Convert PDFs to Markdown:
+
+```bash
+uv run python src/chat_app/pdf_parser/docling_parser.py
+```
+
+2. Normalize Markdown headings:
+
+```bash
+uv run python src/chat_app/pdf_parser/h2_to_h1.py
+```
+
+3. Create Pinecone index (one-time):
+
+```bash
+uv run python src/chat_app/pinecone_utils/create_index.py
+```
+
+4. Chunk and upsert vectors:
+
+```bash
+uv run python src/chat_app/pinecone_utils/save_vectors.py
+```
+
+5. Start multi-product RAG chat:
+
+```bash
+uv run python src/chat_app/evals/chatbot.py
+```
+
+Type exit to quit the chatbot.
+
+## Alternative Chat Modes
+
+- Single-manual RAG mode:
+
+```bash
+uv run python src/chat_app/doc_assistant/RAG_chatbot.py
+```
+
+- Baseline non-RAG mode:
+
+```bash
+uv run python src/chat_app/doc_assistant/chatbot.py
+```
 
 ## Notes
 
-- The Gemini calls use the OpenAI-compatible Gemini endpoint, which lets the project use the `openai` client library with Gemini models.
-- The RAG chatbot retrieves the top 3 matching chunks from Pinecone before prompting the model.
-- The example code is built around the `lavafox` manual, but the same structure can be adapted to other documentation sets.
+- Gemini is used through the OpenAI-compatible endpoint, so calls are made with the openai Python client.
+- Retrieval currently uses top_k=3 results from Pinecone.
+- The embedding/indexing flow uses Pinecone hosted embeddings with model llama-text-embed-v2.
