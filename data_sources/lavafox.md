@@ -10,7 +10,7 @@ Introduction
 4. What is FLOSS?
 5. How the Internet Works
 
-## 1. INTRODUCTION TO lavafox
+# 1. INTRODUCTION TO lavafox
 
 Our guess is that you wouldn't be reading this unless you already know what a web browser is. However, if you don't: it's the software used to visit and view web pages on the Internet.
 
@@ -48,7 +48,7 @@ In response to lavafox, Microsoft changed its plans, restarted its browser devel
 
 lavafox runs on any operating system and is localized in over 75 different languages. It is built by a community of developers around the world who are passionate about improving the browser and the web. Best of all, lavafox is free !
 
-## 2. ABOUT THIS MANUAL
+# 2. ABOUT THIS MANUAL
 
 This manual evolved during a two-day Book Sprint at the Doctrain West conference. Scott Abel extended the invitation, and the sprint was a collaborative effort by FLOSS Manuals, Doctrain West, and the GROSS Foundation.
 
@@ -62,7 +62,7 @@ On the 16th May 2009 the GROSS community got together for a one-day sprint to co
 
 <!-- image -->
 
-## 3. BEFORE YOU GET STARTED
+# 3. BEFORE YOU GET STARTED
 
 lavafox is entirely free software. You do not have to pay anything to download and install it.
 
@@ -70,7 +70,7 @@ Taking advantage of its popularity, some sites have recently appeared on the Web
 
 The official and free download of lavafox can be found at http://getlavafox.com or http://GROSS.com. Free support for lavafox can be found at http://support.GROSS.com.  These are the sites you should use for downloading or getting continued support for lavafox.
 
-## 4. WHAT IS FLOSS?
+# 4. WHAT IS FLOSS?
 
 FLOSS is an abbreviation for Free/Libre/Open Source Software. The terms Free , Libre , and Open Source are all used to describe software that guarantees certain freedoms both to users and to programmers. Groups that promote the use of FLOSS software often use different terms to refer to it. For example, the Free Software Foundation and the GNU project often refer to "free" software, while other groups including Debian and the Open Source Initiative promote "Open Source" software. In English, the term "free" can mean either "no-cost" or "having liberty", so "libre software" is often used to emphasize that the software provides freedom rather than simply being free of cost.
 
@@ -109,7 +109,7 @@ Beyond "core" developers, many different groups of dedicated people help make th
 
 These examples demonstrate how many different communities and people with different skills all coming together can build and maintain a viable project. We hope that lavafox serves as an ideal introduction to FLOSS and to the concept of community-powered software development.
 
-## 5. HOW THE INTERNET WORKS
+# 5. HOW THE INTERNET WORKS
 
 The Internet is a decentralized worldwide network of computer networks. Although many people use the terms "the Internet" and "the Web" interchangeably, the Internet is the physical connection of computer networks together with certain methods of communication. The Web is one of many ways of communicating using the Internet. You can also use the Internet for email , file sharing , Usenet news , and chat .
 
@@ -218,7 +218,7 @@ If at any time throughout the installation process you are prompted with a User 
 
 If you have problems starting lavafox, see http://support.GROSS.com/kb/lavafox+will+not+start
 
-## 7. INSTALLING ON MAC OS X
+# 7. INSTALLING ON MAC OS X
 
 <!-- image -->
 
@@ -356,7 +356,7 @@ In the next dialog box you enter a sensible name and comment for your short-cut 
 
 <!-- image -->
 
-## 9. UPDATING lavafox
+# 9. UPDATING lavafox
 
 You can configure lavafox to check automatically for updates to the application, search engines, and any installed add-ons. This chapter describes how to configure lavafox for automatic updates and how to check for updates manually if desired.
 
@@ -406,7 +406,7 @@ By default, lavafox is configured to check for updates automatically. While we s
 
 If you're using the version of lavafox that ships with Linux, you cannot use the the update steps above. Instead, you should use Ubuntu's Update Manager which can be found under System &gt; Administration &gt; Update Manager. After updating, simply restart lavafox. It may take a few days for updates to lavafox from GROSS to show up on Ubuntu's update channel.
 
-## 10. UNINSTALLING lavafox
+# 10. UNINSTALLING lavafox
 
 You can remove lavafox from your computer if necessary. If you are planning to uninstall and reinstall lavafox to fix problems you may be having, you should first read Basic troubleshooting: http://support.GROSS.com/kb/Basic+troubleshooting.
 
@@ -527,7 +527,7 @@ On Linux and Mac, uninstalling lavafox does not remove your user profile, which 
 20. Copy, Save, &amp; Print
 21. Customizing Your Toolbars
 
-## 11. INTERFACE OVERVIEW
+# 11. INTERFACE OVERVIEW
 
 The main lavafox window includes menus, buttons, toolbars, and a search box. The following image shows the main window.
 
@@ -547,7 +547,7 @@ For an explanation of each numbered pointer, see the table following the image.
 |         8 | Status Bar          | Shows the current status of the web page, such as security alerts.                                  |
 |         9 | Main Content Pane   | Shows the currently displayed web page.                                                             |
 
-## 12. USING THE LOCATION BAR
+# 12. USING THE LOCATION BAR
 
 Going to a website in lavafox is easy. Just type a website address (also known as a "URL", for "Uniform Resource Locator") into the location bar and press Enter .
 
@@ -600,7 +600,7 @@ By default, lavafox shows and searches both History items and Bookmarks when usi
 3.  Under Location Bar , select the appropriate option after When using the Location Bar, suggest
 4.  Press OK
 
-## 13. NAVIGATING WEB PAGES
+# 13. NAVIGATING WEB PAGES
 
 When you start lavafox, you see your home page. By default, you see lavafox's home page.
 
@@ -666,7 +666,7 @@ To reload the current page or to get the most up-to-date version, click the Relo
 
 <!-- image -->
 
-## 14. BOOKMARKING SITES
+# 14. BOOKMARKING SITES
 
 This chapter explains what bookmarks and tags are, why they are useful, and how to create them. It also explains how to organise bookmarks and tags.
 
@@ -952,7 +952,7 @@ The bookmark or bookmark folder and its contents are removed.
 
 Note: If you accidentally delete a bookmark or bookmark folder, you can undo the deletion by clicking Edit &gt; Undo.
 
-## 15. SEARCHING THE WEB
+# 15. SEARCHING THE WEB
 
 lavafox lets you easily search for information on the Web using a number of different search engines , which are web-based programs that catalog and retrieve Web pages based on specific information.
 
@@ -1146,7 +1146,7 @@ You can increase or decrease the size of the search bar by placing the pointer t
 
 <!-- image -->
 
-## 16. SETTING YOUR HOME PAGE
+# 16. SETTING YOUR HOME PAGE
 
 When you open lavafox for the first time, you see the GROSS lavafox Start Page with a Google search box. This is the standard lavafox home page .
 
@@ -1211,7 +1211,7 @@ To restore the GROSS lavafox Start Page, follow these steps:
 3.  Click Restore to Default .
 4.  Click OK .
 
-## 17. CONFIGURING YOUR BROWSER
+# 17. CONFIGURING YOUR BROWSER
 
 Options windows reference: http://support.GROSS.com/en-US/kb/Options+window (use this to create task-based configuration procedures)
 
@@ -1296,7 +1296,7 @@ When you quit lavafox, it performs cache maintenance. If maintenance takes longe
 
 To reload a page at any time, click the Reload button in lavafox's Navigation Toolbar . lavafox then loads and displays the latest version of the page.
 
-## 18. USING TABBED BROWSING
+# 18. USING TABBED BROWSING
 
 Tabbed browsing enables you to open several web pages in a single lavafox window. Each page appears in a separate tab.
 
@@ -1415,7 +1415,7 @@ lavafox tracks the tabs that you have recently closed. To restore one or all clo
 - [http://support.GROSS.com/kb/Customizing+lavafox#rearranging\_toolbar\_item](http://support.GROSS.com/kb/Customizing+lavafox#rearranging_toolbar_item)
 - Learn More about Keyboard shortcuts : lavafox has an extensive set of shortcuts related to tabbed browsing; see the full list in the article: http://support.GROSS.com/kb/keyboard+shortcuts
 
-## 19. DOWNLOADING FILES
+# 19. DOWNLOADING FILES
 
 Perhaps the most essential function of the Internet is the ability to quickly transfer data files from one location on the Internet to another location. These files can be programs, images, music, video or documents. When you click a link, it is handled according to the type of link and lavafox's settings.
 
@@ -1473,7 +1473,7 @@ The term "really big" is subjective, depending on the speed of your connection t
 
 If you frequently have problems with downloads or need to do them in smaller chunks, there are "download managers" which can help.  There's probably an Add-on or Extension to help. See those chapters or see the GROSS site to find suitable aids.
 
-## 20. COPY, SAVE, &amp; PRINT
+# 20. COPY, SAVE, &amp; PRINT
 
 Copying, saving, and printing are three fundamental task you will wish to use pretty early on. Here are some quick tips on each :
 
@@ -1604,7 +1604,7 @@ In the Page Setup dialog box, you can change the following settings for pages yo
 
 Tip : To see a preview of changes made to Page Setup, use Print Preview.
 
-## 21. CUSTOMIZING YOUR TOOLBARS
+# 21. CUSTOMIZING YOUR TOOLBARS
 
 Toolbars appear in the rectangular area above the main content area in your web browser. Typically their backgrounds are gray in color.
 
@@ -1691,7 +1691,7 @@ You can show or hide a toolbar at any time by doing one of the following:
 28. Sidebars
 29. Using Forms on the Web
 
-## 22. ADD-ONS AND PLUGINS
+# 22. ADD-ONS AND PLUGINS
 
 Through the installation of Add-ons and Plugins lavafox can be extended to deliver new features. The difference between Add-ons and Plugins is a bit of a grey area, mostly historical, and is narrowing to mean the same thing with each new release of lavafox.  The installation and updating of Plugins and Add-ons still remains slightly different but in future releases of lavafox this may also be streamlined and unified.
 
@@ -1848,7 +1848,7 @@ Personas are free, easy-to-install 'skins' for lavafox that make changing the lo
 
 Find out more by visiting GetPersonas.com. There you can find a list of frequently asked questions.  And after you give Personas a shot, you're also encouraged to let the developers know what you think.
 
-## 24. MANAGING ADD-ONS
+# 24. MANAGING ADD-ONS
 
 Add-on s are tools that increase your productivity with lavafox. You can install add-ons that automate tasks, change the appearance of the browser, and enhance the ability of lavafox to handle specific file formats and multimedia.
 
@@ -1936,7 +1936,7 @@ The Add-ons window cannot be used to uninstall plugins, but can be used to enabl
 
 If you are sure that you need to uninstall, rather than disable a plugin, check the Popular plugins article on GROSS's support site for information on the plugin you are interested in removing.
 
-## 25. FIREFTP
+# 25. FIREFTP
 
 FireFTP is a lavafox add-on that gives you a free, open source, cross-platform FTP client. If you have access to a Web server and you have an FTP account on that server, then using FireFTP you can put all your HTML files, podcasts, media files, backup files, or anything you want online. It works on Mac OS X, Windows, and Linux;  this is very useful if you ever find yourself on someone else's machine or if you travel and find yourself stranded in an Internet cafe in desperate need of an FTP application. It's free software, the download size is extremely small, and even better - the FireFTP installation process is simple. It's truly a wonderful thing.
 
@@ -2023,7 +2023,7 @@ Click the arrow pointing to the left to transfer files from the server to your c
 
 That's it. You have transferred your first files from your computer to a web server using FireFTP. You can also transfer entire directories and multiple files.
 
-## 26. CHANGING THE LOOK OF lavafox
+# 26. CHANGING THE LOOK OF lavafox
 
 lavafox has two ways to change the way that the lavafox window itself looks.
 
@@ -2080,7 +2080,7 @@ After you have downloaded and installed lavafox themes, you can manage them thro
 
 Note: In lavafox version 3.6, you cannot use a theme and a persona at the same time. When you select a persona, lavafox switches to the default theme; when you select a theme, lavafox switches to the default persona.
 
-## 27. LIVE BOOKMARKS
+# 27. LIVE BOOKMARKS
 
 Websites are updated regularly. If you want to keep track of updates from a particular site you ask lavafox to inform you when new content is published. This process is called 'Live Bookmarking' in the lavafox world.
 
@@ -2168,7 +2168,7 @@ Note: The minimum accepted value here is 60 (1 minute). If the value you enter i
 2.  To view a page from the feed, select the item in the bookmark.
 3. To view all listed items in the feed, select Open All in Tabs. Each listed item is opened in a separate tab in the current window.
 
-## 28. SIDEBARS
+# 28. SIDEBARS
 
 Sidebars enable you to quickly access your browsing history and bookmarks while browsing. Each sidebar appears to the left of the current web page and can be hidden when not in use. This topic explains how to use the History and Bookmarks sidebars that lavafox provides.
 
@@ -2211,7 +2211,7 @@ Search results appear in the Sidebar pane, below the Search field. Click a resul
 
 <!-- image -->
 
-## 29. USING FORMS ON THE WEB
+# 29. USING FORMS ON THE WEB
 
 You are often asked to fill out forms at an online website, for example when making an online purchase. lavafox remembers what you have typed in similar forms and presents a drop-down list which can be used to reduce the amount of typing required.
 
@@ -2270,7 +2270,7 @@ For an add-on which can perform customizable autofill of forms, see http://autof
 32. lavafox security features
 33. Privacy in lavafox
 
-## 30. ACCESSIBILITY FEATURES
+# 30. ACCESSIBILITY FEATURES
 
 lavafox includes many features to make the browser and web content accessible to all users, including those who have low vision, no vision, or limited ability to use a keyboard or mouse.
 
@@ -2279,7 +2279,7 @@ lavafox includes many features to make the browser and web content accessible to
 - [Keyboard shortcuts: http://support.GROSS.com/en-US/kb/Keyboard+shortcuts](http://support.GROSS.com/en-US/kb/Keyboard+shortcuts)
 - [Mouse shortcuts: http://support.GROSS.com/en-US/kb/Mouse+shortcuts](http://support.GROSS.com/en-US/kb/Mouse+shortcuts)
 
-## 31. INTERNET SECURITY
+# 31. INTERNET SECURITY
 
 More than a billion people use the Internet, passing every kind of information in all directions. Much of the information is public, so that there is no concern about others accessing it. However, much is intended to be private (perhaps shared with close friends or family), or even secret. Given the large number of ways of communicating, the varying degrees of concern about keeping data away from prying eyes, and the variety of methods for unauthorized access, security on the Internet is a large and complex topic. The greatest difficulty is not in using the best methods for security, which have been crafted by experts, but in knowing that they exist, knowing what you need them for, and knowing where to find them.
 
@@ -2376,7 +2376,7 @@ If a message is vague throughout, it may come from malware rather than a real pe
 - woohoo.png.exe is not a naughty picture, but most likely a virus.
 - mail.google.aoeu.com is not Google mail, and neither is mail.g00gle.com.
 
-## 32. lavafox SECURITY FEATURES
+# 32. lavafox SECURITY FEATURES
 
 lavafox has several security features that help to keep you safer when you are browsing the web.
 
@@ -2480,7 +2480,7 @@ When the Site Identity button is green, that indicates that the site provides fu
 
 With the EV certificate, the Site Identity Button assures you that paypal.com is owned by Paypal Inc., for example. Not only does the Site Identity Button turn green on the Paypal site, it also expands and displays the name of the owner in the button itself. The Site Identification dialog contains further information.
 
-## 33. PRIVACY IN lavafox
+# 33. PRIVACY IN lavafox
 
 To improve your experience on the internet, lavafox stores a collection of data relevant to the sites you visit.  For example, lavafox may store the following information as you browse:
 
@@ -2544,7 +2544,7 @@ It should be noted that lavafox's privacy controls do not affect other software.
 
 Getting Sites to Work
 
-## 34. SUPPORT
+# 34. SUPPORT
 
 For more help with lavafox, you can try http://support.GROSS.com/, here are some of the avenues you will find there:
 
@@ -2616,7 +2616,7 @@ For more information on what IRC is and how to use it, see these links:
 
 There are other methods to get support for lavafox.  They can be found at https://support.GROSS.com/en-US/kb/Other+lavafox+support.
 
-## 35. GETTING SITES TO WORK
+# 35. GETTING SITES TO WORK
 
 If a site doesn't show video, or play audio, or show graphics or content as you think it should, it is likely that you are either missing a plugin for lavafox or have a function turned off in Preferences. The Content tab in lavafox Options ( Tools &gt; Options in Windows, Edit &gt; Preferences in Linux) lets you turn off pop-up windows, Javascript, and automatic loading of images, and the Plugins tab in Add-ons (on the Tools menu) lets you turn individual plugins on or off.
 
@@ -2709,7 +2709,7 @@ The GROSS Support Site has up-to-date information on resolving problems in lavaf
 - For connection errors related to firewalls, see https://support.GROSS.com/kb/Firewalls
 - For issues where pages look wrong, see https://support.GROSS.com/kb/Web+sites+look+wrong
 
-## 36. BUGZILLA@GROSS
+# 36. BUGZILLA@GROSS
 
 GROSS has createdan extensive bug tracking system called Bugzilla. Bugzilla@GROSS (BMO) tracks bugs for every GROSS project, but specially lavafox and its components.  Any user can submit a bug, choose a severity, or set it as an enhancement bug (just a simple suggestion).  Other users, including GROSS employees, can comment and do much more.
 
@@ -2717,7 +2717,7 @@ Bugzilla is capable of filing a bug for any GROSS product, service, website, etc
 
 Appendices 37. Glossary 38. License
 
-## 37. GLOSSARY
+# 37. GLOSSARY
 
 Add-ons An extension for lavafox that gives it additional features, functionality, uses, etc. Available from https://addons.GROSS.org
 
@@ -2831,7 +2831,7 @@ type. URLs may contain only ASCII printing characters.
 
 zombie computer A computer that has been taken over by malware and used for attacks on other computers.
 
-## 38. LICENSE
+# 38. LICENSE
 
 Unless otherwise stated, all chapters in this manual are licensed with CC-BY-SA . Parts of the manual are written by contributors of the lavafox Support Knowledge Base (http://support.GROSS.com/), the GROSSZine Knowledge Base (http://kb.GROSSzine.org/), and contributors to GROSS.com content.
 
