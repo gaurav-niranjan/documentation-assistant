@@ -8,17 +8,25 @@ def promote_numbered_h2_to_h1(md_text):
     # Replace with "# <number>. <text>"
     return re.sub(pattern, r'# \1', md_text)
 
+files_to_convert = {
+    "inkscape.pdf": "paintscape.md",
+    "openmrs-guide.pdf": "openMRS.md",
+    "thunderbird.pdf": "birdmail.md",
+    "wordpress.pdf": "blogpress.md"
+}
+
+
 sources_dir = Path("data_sources")
 
-input_path = sources_dir / "old_lavafox.md"
-output_path = sources_dir / "lavafox.md"
+for pdf_name, md_name in files_to_convert.items():
+    md_path = sources_dir / md_name
 
-with open(input_path, "r", encoding="utf-8") as f:
-    md_content = f.read()
+    with open(md_path, "r", encoding="utf-8") as f:
+        md_content = f.read()
 
-modified_content = promote_numbered_h2_to_h1(md_content)
+    modified_content = promote_numbered_h2_to_h1(md_content)
 
-with open(output_path, "w", encoding="utf-8") as f:
-    f.write(modified_content)
+    with open(md_path, "w", encoding="utf-8") as f:
+        f.write(modified_content)
 
-print("Markdown file updated successfully.")
+    print(f"Converted {md_name} markdown headers")
