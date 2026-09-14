@@ -132,7 +132,7 @@ if __name__ == "__main__":
         history.extend([user_prompt(user_input)])
         response = llm_response(history)
 
-        print(f"\nAssistant: {remove_bracket_tags(response.choices[0].message.content)}\n")
+        print(f"\nAssistant: {response.choices[0].message.content}\n")
 
         history.extend([{"role": "assistant", "content": response.choices[0].message.content}])
 
