@@ -18,7 +18,6 @@ rag_chunks = {}
 def rag(user_input, manual_name, rag_chunks):
 
     rag_chunks.clear()
-    manual_names = ["lavafox", "birdmail", "openMRS", "paintscape", "blogpress"]
 
     results = dense_index.search(
         namespace="all-gross",
@@ -28,7 +27,7 @@ def rag(user_input, manual_name, rag_chunks):
                 "text": user_input
             },
             **({"filter": {"manual": manual_name}} \
-               if manual_name in manual_names else {})
+               if manual_name in MANUAL_NAMES else {})
         }
     )
 
@@ -136,6 +135,8 @@ def expand_query(conversation):
 
     return response.choices[0].message.content
 
+MANUAL_NAMES = ["lavafox", "birdmail", "openMRS", "paintscape", "blogpress"]
+
 def classify_manual(conversation):
     response = llm.chat.completions.create(
         model = "gemini-3.1-flash-lite",
@@ -152,7 +153,8 @@ def classify_manual(conversation):
         ]
     )
 
-    return response
+    label = response.choices[0].message.content.strip().lower()
+    return next((name for name in MANUAL_NAMES if name.lower() == label), "unsure")
 
 def remove_bracket_tags(text):
     return re.sub(r'\[\[.*?\]\]\s*(\r?\n)?', '', text)
